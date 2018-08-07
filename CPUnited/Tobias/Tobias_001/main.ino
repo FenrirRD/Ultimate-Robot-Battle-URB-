@@ -3,6 +3,7 @@
 -------------------------------------------------------------------------------------*/
 void start()
 {
+  /*
   switch (modeOp) {
     case -1:
       //robo em modo teste
@@ -12,4 +13,5 @@ void start()
       //robo em modo combate Sumô
       modeSumo();
   }
+  */
 }

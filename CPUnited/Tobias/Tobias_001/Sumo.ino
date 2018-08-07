@@ -5,12 +5,12 @@ void modeSumo()
 {
 
 }
-
 /*-------------------------------------------------------------------------------------
                                 Verificação dos IR
 -------------------------------------------------------------------------------------*/
 void checkIR()
 {
+  int IRValue1,IRValue2,IRValue3,IRValue4;
   // --- Leitura das entradas analogicas ---
   IRValue1 = analogRead(IR1);
   IRValue2 = analogRead(IR2);
