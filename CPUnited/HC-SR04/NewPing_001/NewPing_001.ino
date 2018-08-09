@@ -7,25 +7,30 @@
 
 #include <NewPing.h>
 
-#define SONAR1  9  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
-#define SONAR2  10  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
+#define trigger_1  2  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
+#define echo_1  3  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
+#define trigger_2  4  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
+#define echo_2  5  // Arduino pin tied to both trigger and echo pins on the ultrasonic sensor.
 #define MAX_DISTANCE 200 // Maximum distance we want to ping for (in centimeters). Maximum sensor distance is rated at 400-500cm.
 
-NewPing sonar1(SONAR1, SONAR1, MAX_DISTANCE); // NewPing setup of pin and maximum distance.
-NewPing sonar2(SONAR2, SONAR2, MAX_DISTANCE); // NewPing setup of pin and maximum distance.
+NewPing sonar1(trigger_1, echo_1, MAX_DISTANCE); // NewPing setup of pin and maximum distance.
+NewPing sonar2(trigger_2, echo_2, MAX_DISTANCE); // NewPing setup of pin and maximum distance.
 
+int valSonar1, valSonar2;
 void setup() {
   Serial.begin(9600); // Open serial monitor at 115200 baud to see ping results.
 }
 
 void loop() {
-  //delay(50);                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
-  //Serial.print("Ping [1] : ");
-  //Serial.print(sonar1.ping_cm()); // Send ping, get distance in cm and print result (0 = outside set distance range)
-  //Serial.println("cm");
 
-  delay(50);                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
+  delay(100);                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
+  valSonar1 = sonar1.ping_cm();
+  delay(100);
+  valSonar2 = sonar2.ping_cm();
+  Serial.print("Ping [1] : ");
+  Serial.print(valSonar1); // Send ping, get distance in cm and print result (0 = outside set distance range)
+  Serial.print("cm        |         ");                     // Wait 50ms between pings (about 20 pings/sec). 29ms should be the shortest delay between pings.
   Serial.print("Ping [2] : ");
-  Serial.print(sonar2.ping_cm()); // Send ping, get distance in cm and print result (0 = outside set distance range)
+  Serial.print(valSonar2); // Send ping, get distance in cm and print result (0 = outside set distance range)
   Serial.println("cm");
 }

@@ -24,26 +24,26 @@ void loop() {
   Serial.println(IRValue);
   Serial.print("Button = ");
   Serial.println(digitalRead(Button));
-  delay(500);
+  //delay(500);
 
   IRValue = analogRead(IR2);
   Serial.print("Analog [2] = ");
   Serial.println(IRValue);
   Serial.print("Button = ");
   Serial.println(digitalRead(Button));
-  delay(500);
+  //delay(500);
 
   IRValue = analogRead(IR3);
   Serial.print("Analog [3] = ");
   Serial.println(IRValue);
   Serial.print("Button = ");
   Serial.println(digitalRead(Button));
-  delay(500);
+  //delay(500);
 
   IRValue = analogRead(IR4);
   Serial.print("Analog [4] = ");
   Serial.println(IRValue);
   Serial.print("Button = ");
   Serial.println(digitalRead(Button));
-  delay(500);
+  delay(1000);
 }
